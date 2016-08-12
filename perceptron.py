@@ -65,11 +65,10 @@ class Perceptron(object):
         """Return class label after unit step"""
         return np.where(self.net_input(X) >= 0.0, 1, -1)#analoge ? : in C++
 
-
-df = load_iris()
-X, y = df.data, df.target
-X = X[:100,[0, 2]]
-y = y[:100]
+df = pd.read_csv('https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data', header = None)
+y = df.iloc[:100, 4].values
+y = np.where(y == 'Iris-setosa', -1, 1)
+X = df.iloc[:100, [0, 2]].values
 
 
 plt.scatter(X[:50, 0],X[:50, 1], color = 'red', marker = 'o', label = 'setosa')

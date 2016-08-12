@@ -97,10 +97,10 @@ def plot_decision_region(X, y, classifier, resolution = 0.02):
 """
 Loading iris data
 """
-df = load_iris()
-X, y = df.data, df.target
-X = X[:100, [0, 2]]
-y = y[:100]
+df = pd.read_csv('https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data', header = None)
+X = df.iloc[:100, [0, 2]].values
+y = df.iloc[:100, 4].values
+y = np.where(y == 'Iris-setosa', -1, 1)
 
 """
 It is not a good idea to set the learning rate too large or too small
