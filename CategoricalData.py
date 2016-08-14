@@ -38,4 +38,4 @@ y = class_le.fit_transform(df['classlabel'].values)
 print y
 print "TRACK ================="
 
-
+print pd.get_dummies(df)
