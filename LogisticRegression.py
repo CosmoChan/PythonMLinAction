@@ -10,6 +10,8 @@ from sklearn.cross_validation import  train_test_split
 import numpy as np
 from pdr import plot_decision_regions
 import matplotlib.pyplot as plt
+from scipy.sparse import csc_matrix
+
 
 
 iris = datasets.load_iris()
@@ -50,3 +52,4 @@ plt.xlabel('C')
 plt.legend(loc = 'upper left')
 plt.xscale('log')
 plt.show()
+
