@@ -25,8 +25,8 @@ le = LabelEncoder()
 y = le.fit_transform(y)
 print np.unique(y)
 
+#Splitting
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.3, random_state = 0)
-
 
 pipe_lr = Pipeline([('scl', StandardScaler()),
                     ('clf', LogisticRegression(penalty = 'l2', random_state = 0))
