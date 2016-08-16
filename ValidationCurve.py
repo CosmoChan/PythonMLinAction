@@ -60,15 +60,15 @@ plt.plot(param_range, train_mean,
 plt.fill_between(param_range, train_mean + train_std, train_mean - train_std,
                 color = 'blue', alpha = 0.15)
 plt.plot(param_range, test_mean,
-         color = 'green', marker = '^',
-         markersize = 5, label = 'Test accuracy')
+         color = 'green', linestyle = '--', marker = 's',
+         markersize = 5, label = 'Validation accuracy')
 plt.fill_between(param_range, test_mean + test_std, test_mean - test_std,
                  color = 'green', alpha = 0.15)
-plt.xlabel('Parameter C')
+plt.grid()
 plt.xscale('log')
+plt.legend(loc = 'lower right')
+plt.xlabel('Parameter C')
 plt.ylabel('Accuracy')
-plt.title('Validation Curve')
-plt.legend('lower right')
 plt.ylim([0.8, 1.0])
 plt.show()
 
